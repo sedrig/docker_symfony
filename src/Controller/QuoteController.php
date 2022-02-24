@@ -9,8 +9,24 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class QuoteController extends AbstractController
 {
+
+    public string $route = 'api';
+
     #[Route('/', name: 'index')]
     public function index(
+        QuoteRepository $quoteRepository
+    )
+    :Response{
+        return $this->render(
+            'quote/index.html.twig',
+            [
+                'quotes' => $quoteRepository->findByExampleField(),
+            ]
+        );
+    }
+
+    #[Route('/all', name: 'col')]
+    public function col(
         QuoteRepository $quoteRepository
     )
     : Response {
@@ -22,4 +38,9 @@ class QuoteController extends AbstractController
             ]
         );
     }
+
+    public function rename(){
+        $this->route = 'mulat';
+    }
+
 }

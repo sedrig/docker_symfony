@@ -22,19 +22,17 @@ class QuoteRepository extends ServiceEntityRepository
     // /**
     //  * @return Quote[] Returns an array of Quote objects
     //  */
-    /*
-    public function findByExampleField($value)
+
+    public function findByExampleField()
     {
         return $this->createQueryBuilder('q')
-            ->andWhere('q.exampleField = :val')
-            ->setParameter('val', $value)
             ->orderBy('q.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+
 
     /*
     public function findOneBySomeField($value): ?Quote
